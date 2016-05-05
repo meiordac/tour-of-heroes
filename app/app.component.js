@@ -11,7 +11,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var AppComponent;
+    var AppComponent, Hero;
     return {
         setters:[
             function (core_1_1) {
@@ -20,17 +20,28 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.title = 'Tour of Heroes';
+                    this.hero = {
+                        id: 1,
+                        name: 'Windstorm'
+                    };
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<h1> My first Angular 2 App </h1>'
+                        template: '<h1> {{title}}</h1><h2>{{hero.name}}</h2>'
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
             }());
             exports_1("AppComponent", AppComponent);
+            Hero = (function () {
+                function Hero() {
+                }
+                return Hero;
+            }());
+            exports_1("Hero", Hero);
         }
     }
 });
