@@ -1,5 +1,6 @@
 import {Hero} from './hero';
 import { Component, Input } from 'angular2/core';
+import {HeroService} from './hero.service'
 
 @Component({
     selector: 'my-hero-detail',
@@ -17,6 +18,9 @@ import { Component, Input } from 'angular2/core';
 }) 
 
 export class HeroDetailComponent {
+	
+	constructor(private heroService: HeroService){}
+	
 	@Input()
 	hero: Hero;
 	

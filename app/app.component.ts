@@ -76,6 +76,10 @@ export class AppComponent{
   
   constructor(private heroService: HeroService) { }
   
+  getHeroes(){
+    this.heroes= this.heroService.getHeroes();
+  }
+  
 title='Tour of Heroes';
 heroes: Hero[];
 selectedHero: Hero;

@@ -1,4 +1,4 @@
-System.register(['./hero', 'angular2/core'], function(exports_1, context_1) {
+System.register(['./hero', 'angular2/core', './hero.service'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['./hero', 'angular2/core'], function(exports_1, context_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var hero_1, core_1;
+    var hero_1, core_1, hero_service_1;
     var HeroDetailComponent;
     return {
         setters:[
@@ -19,10 +19,14 @@ System.register(['./hero', 'angular2/core'], function(exports_1, context_1) {
             },
             function (core_1_1) {
                 core_1 = core_1_1;
+            },
+            function (hero_service_1_1) {
+                hero_service_1 = hero_service_1_1;
             }],
         execute: function() {
             HeroDetailComponent = (function () {
-                function HeroDetailComponent() {
+                function HeroDetailComponent(heroService) {
+                    this.heroService = heroService;
                 }
                 __decorate([
                     core_1.Input(), 
@@ -33,7 +37,7 @@ System.register(['./hero', 'angular2/core'], function(exports_1, context_1) {
                         selector: 'my-hero-detail',
                         template: "\n      \t<div *ngIf=\"hero\">\n  \t<h2>{{hero.name}} details!</h2>\n  \t<div><label>id: </label>{{hero.id}}</div>\n  \t<div>\n    \t<label>name: </label>\n    \t<input [(ngModel)]=\"hero.name\" placeholder=\"name\"/>\n  \t</div>\n\t</div>\n    "
                     }), 
-                    __metadata('design:paramtypes', [])
+                    __metadata('design:paramtypes', [hero_service_1.HeroService])
                 ], HeroDetailComponent);
                 return HeroDetailComponent;
             }());
