@@ -1,5 +1,5 @@
 import { Hero } from './hero';
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {HeroDetailComponent} from './hero-detail.component' 
 import {HeroService} from './hero.service'
 
@@ -72,9 +72,14 @@ directives: [HeroDetailComponent],
 providers: [HeroService]
 })
 
-export class AppComponent{
+export class AppComponent implements OnInit{
   
   constructor(private heroService: HeroService) { }
+  
+  ngOnInit()
+  {
+    this.getHeroes();
+  }
   
   getHeroes(){
     this.heroes= this.heroService.getHeroes();
