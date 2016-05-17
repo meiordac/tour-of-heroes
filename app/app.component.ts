@@ -1,6 +1,7 @@
 import { Hero } from './hero';
 import {Component} from 'angular2/core';
 import {HeroDetailComponent} from './hero-detail.component' 
+import {HeroService} from './hero.service'
 
 @Component({
 	selector: 'my-app',
@@ -66,10 +67,15 @@ styles:[`
     border-radius: 4px 0 0 4px;
   }
 `],
-directives: [HeroDetailComponent]
+directives: [HeroDetailComponent],
+
+providers: [HeroService]
 })
 
 export class AppComponent{
+  
+  constructor(private heroService: HeroService) { }
+  
 title='Tour of Heroes';
 heroes: Hero[];
 selectedHero: Hero;
