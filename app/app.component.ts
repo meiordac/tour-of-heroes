@@ -1,3 +1,4 @@
+import { Hero } from './hero';
 import {Component} from 'angular2/core';
 import {HeroDetailComponent} from './hero-detail.component' 
 
@@ -70,7 +71,7 @@ directives: [HeroDetailComponent]
 
 export class AppComponent{
 title='Tour of Heroes';
-public heroes = HEROES;
+heroes: Hero[];
 selectedHero: Hero;
 onSelect(hero: Hero) {this.selectedHero = hero;}
 } 
