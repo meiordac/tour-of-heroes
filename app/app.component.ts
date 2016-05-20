@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import {HeroService} from './hero.service'
 import {HeroesComponent} from './heroes.component'
+import {DashboardComponent} from './dashboard.component'
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
 @RouteConfig([
@@ -8,6 +9,11 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
     path: '/heroes',
     name: 'Heroes',
     component: HeroesComponent
+  },
+  {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component:DashboardComponent
   }
 ])
 
