@@ -13,7 +13,8 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
   {
       path: '/dashboard',
       name: 'Dashboard',
-      component:DashboardComponent
+      component:DashboardComponent, 
+      useAsDefault: true
   }
 ])
 
@@ -21,6 +22,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
   selector: 'my-app',
   template: `
   <h1><title>{{title}}</title></h1>
+  <a [routerLink] ="['Dashboard']">Dashboard</a>
   <a [routerLink] ="['Heroes']">Heroes</a>
   <router-outlet></router-outlet>
   `,

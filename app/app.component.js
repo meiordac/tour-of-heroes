@@ -27,12 +27,13 @@ var AppComponent = (function () {
             {
                 path: '/dashboard',
                 name: 'Dashboard',
-                component: dashboard_component_1.DashboardComponent
+                component: dashboard_component_1.DashboardComponent,
+                useAsDefault: true
             }
         ]),
         core_1.Component({
             selector: 'my-app',
-            template: "\n  <h1><title>{{title}}</title></h1>\n  <a [routerLink] =\"['Heroes']\">Heroes</a>\n  <router-outlet></router-outlet>\n  ",
+            template: "\n  <h1><title>{{title}}</title></h1>\n  <a [routerLink] =\"['Dashboard']\">Dashboard</a>\n  <a [routerLink] =\"['Heroes']\">Heroes</a>\n  <router-outlet></router-outlet>\n  ",
             directives: [
                 router_deprecated_1.ROUTER_DIRECTIVES],
             providers: [
