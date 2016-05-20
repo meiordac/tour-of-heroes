@@ -11,11 +11,13 @@ testing_1.describe('Smoke test', function () {
         testing_1.expect(true).toEqual(true, 'should pass');
     });
 });
-testing_1.describe('AppComponent with new', function () {
-    testing_1.it('should instantiate component', function () {
-        testing_1.expect(new app_component_1.AppComponent()).toBeDefined('Whoopie!');
-    });
+/*
+describe('AppComponent with new', function () {
+  it('should instantiate component', () => {
+    expect(new AppComponent()).toBeDefined('Whoopie!');
+  });
 });
+*/
 testing_1.describe('AppComponent with TCB', function () {
     testing_1.it('should instantiate component', testing_1.async(testing_1.inject([testing_2.TestComponentBuilder], function (tcb) {
         tcb.createAsync(app_component_1.AppComponent).then(function (fixture) {
