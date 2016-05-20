@@ -3,11 +3,20 @@ import {HeroService} from './hero.service'
 import {HeroesComponent} from './heroes.component'
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
+@RouteConfig([
+  {
+    path: '/heroes',
+    name: 'Heroes',
+    component: HeroesComponent
+  }
+])
+
 @Component({
   selector: 'my-app',
   template: `
   <h1><title>{{title}}</title></h1>
-  <my-heroes></my-heroes>
+  <a [routerLink] ="['Heroes']">Heroes</a>
+  <router-outlet></router-outlet>
   `,
   directives: [
       ROUTER_DIRECTIVES],
